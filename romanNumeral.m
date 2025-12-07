@@ -14,18 +14,15 @@ function roman = romanNumeral(n)
               'Input must be in the range 1..3999 (standard Roman numeral limit).');
     end
 
-    roman = '';
 
-    while n >= 1
-        if n >= 1000
-            roman = [ roman 'M' ];
-            n = n - 1000;
-       elseif n >= 100
-            roman = [ roman 'C' ];
-            n = n - 100;
-        elseif n >= 1
-            roman = [ roman 'I' ];
-            n = n - 1;
+    values  = [1000  100   1];
+    symbols = { 'M', 'C', 'I'};
+
+    roman = '';
+    for i = 1:numel(values)
+        while n >= values(i)
+            roman = [roman symbols{i}];
+            n = n - values(i);
         end
     end
 end
