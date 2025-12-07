@@ -18,6 +18,10 @@ classdef testRomanNumeral < matlab.unittest.TestCase
             tc.verifyEqual(romanNumeral(300), 'CCC');
         end
 
+        function testPositive1964(tc)
+            tc.verifyEqual(romanNumeral(1964), 'MCMLXIV');
+        end
+
         function testPositive2202(tc)
             tc.verifyEqual(romanNumeral(2202), 'MMCCII');
         end
