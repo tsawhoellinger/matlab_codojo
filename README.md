@@ -16,3 +16,8 @@ ans = MCMLXIV
 
 # run all tests in all directories (usi in CI)
 % matlab -batch "addpath(genpath('$PWD')); results = runtests; assertSuccess(results);"
+
+
+# branch definitions
+develop - main integration branch 
+feature/myFeature - feature development branch to merge into develop if finished (PR or direct merge)
