@@ -5,6 +5,15 @@ function roman = romanNumeral(n)
 %   Example:
 %       romanNumeral(1999)   % returns 'MCMXCIX'
 
+    if ~isscalar(n) || n ~= floor(n)
+        error('Input must be an integer')
+    end
+
+    if n < 1 || n > 3999
+        error('romanNumeral:OutOfRange', ...
+              'Input must be in the range 1..3999 (standard Roman numeral limit).');
+    end
+
     roman = '';
 
     while n >= 1
