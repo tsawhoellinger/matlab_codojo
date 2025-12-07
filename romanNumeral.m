@@ -5,8 +5,16 @@ function roman = romanNumeral(n)
 %   Example:
 %       romanNumeral(1999)   % returns 'MCMXCIX'
 
-    if n == 1
-        roman = 'I';
+    roman = '';
+
+    while n >= 1
+        if n >= 1000
+            roman = [ roman 'M' ];
+            n = n - 1000;
+        elseif n >= 1
+            roman = [ roman 'I' ];
+            n = n - 1;
+        end
     end
 end
 
